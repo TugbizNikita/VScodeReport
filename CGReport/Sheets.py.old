@@ -1,0 +1,511 @@
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+from datetime import datetime, date
+import json
+import pandas as pd
+from IPython.display import display
+
+
+def read_data(event=None, context=None):
+
+    event_body = event['body']
+    event_body = (json.loads(event_body))
+
+    scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
+             "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
+    creds = ServiceAccountCredentials.from_json_keyfile_name(
+        "creds.json", scope)
+    client = gspread.authorize(creds)
+
+    file = client.open(event_body['file-name'])
+    sheet = getattr(file, event_body['sheet-name'])
+
+    formatted_filter_date = None
+    try:
+        filter_date = event_body['date']
+        formatted_filter_date = datetime.strptime(
+            filter_date, '%d/%m/%Y').date()
+    except:
+        pass
+
+    result = sheet.get_all_records()
+    response = {
+        'statusCode': 200,
+        'body': json.dumps({
+            'result': filter_by_timestamp(result, formatted_filter_date)
+        })
+    }
+
+    return response
+
+
+def filter_by_timestamp(result, filter_date):
+    if filter_date == None:
+        filter_date = date.today()
+    today_present_students = []
+    for i in result:
+        date_time_obj = datetime.strptime(
+            i['Timestamp'], '%m/%d/%Y %H:%M:%S').date()
+        if date_time_obj == filter_date:
+            today_present_students.append(i)
+
+    return today_present_students
+
+
+def read_wpa_report(event=None, context=None):
+    event_body = event['body']
+    event_body = (json.loads(event_body))
+    scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
+             "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
+    creds = ServiceAccountCredentials.from_json_keyfile_name(
+        "creds.json", scope)
+    client = gspread.authorize(creds)
+
+    file = client.open(event_body['Name'])
+    sheet = file.get_worksheet(int(event_body['WS_Number']))
+    emp_id = event_body['emp_id']
+    emp_col_number = event_body['emp_col_number']
+    all_emp_id = sheet.col_values(int(emp_col_number))
+    all_emp_id = all_emp_id[2:]
+    data = {}
+    row1 = sheet.row_values(2)
+
+    if emp_id == "all":
+        print('inside all')
+        data_all = []
+        for i in range(len(all_emp_id)):  # row loop
+            row2 = sheet.row_values(i+3)
+            x = {str(all_emp_id[i]): {}}
+            for j in range(len(row2)):  # col loop
+                x[str(all_emp_id[i])][str(row1[j])] = row2[j]
+            data_all.append(x)
+        print(data_all)
+        return({
+            'statusCode': 200,
+            'body': json.dumps({
+                'result': data_all
+            })
+        })
+
+    row = 0
+    for i in range(len(all_emp_id)):
+        if all_emp_id[i] == emp_id:
+            row = i + 3
+
+    row2 = sheet.row_values(row)
+    data = {}
+    for i in range(len(row2)):
+        data[str(row1[i])] = row2[i]
+
+    return ({
+        'statusCode': 200,
+        'body': json.dumps({
+            'result': data
+        })
+    })
+
+
+def read_with_pandas():
+    # event_body = event['body']
+    # event_body = (json.loads(event_body))
+    scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
+             "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
+    creds = ServiceAccountCredentials.from_json_keyfile_name(
+        "creds.json", scope)
+    client = gspread.authorize(creds)
+
+    file = client.open('WPR_NET Core - 30-Nov-2021-24-Jan-22')
+    sheet = file.get_worksheet(0)
+    emp_id = 'all'
+    emp_col_number = 5
+    all_emp_id = sheet.col_values(int(emp_col_number))
+    all_emp_id = all_emp_id[2:]
+    data_all = []
+    row1 = sheet.row_values(2)
+
+    if emp_id == "all":
+        print('inside all')
+        for i in range(len(all_emp_id)):  # row loop
+            row2 = sheet.row_values(i+3)
+            data_all.append({})
+            for j in range(len(row2)):  # col loop
+                data_all[i][str(row1[j])] = row2[j]
+
+    df = pd.DataFrame(data_all)
+    df = df.drop(df.loc[df['W8 - Technical(on Scale of 5)'] == 'DO'].index)
+    # display(df.iloc[33])
+    print('----------------------Week Average----------------------')
+    print("W2")
+    display((df['W2 - Technical(on Scale of 5)'].apply(pd.to_numeric)).mean())
+    print("W3")
+    display((df['W3 - Technical(on Scale of 5)'].apply(pd.to_numeric)).mean())
+    print("W4")
+    display((df['W4 - Technical(on Scale of 5)'].apply(pd.to_numeric)).mean())
+    print("W5")
+    display((df['W5 - Technical(on Scale of 5)'].apply(pd.to_numeric)).mean())
+    print("W6")
+    display((df['W6 - Technical(on Scale of 5)'].apply(pd.to_numeric)).mean())
+    print("W7")
+    display((df['W7 - Technical(on Scale of 5)'].apply(pd.to_numeric)).mean())
+    print("W8")
+    display((df['W8 - Technical(on Scale of 5)'].apply(pd.to_numeric)).mean())
+
+    print('----------------------Week 2 Bottom Performers----------------------')
+    print(df['W2 - Technical(on Scale of 5)'].sort_values(ascending=True).head(5))
+
+    all_column_name = []
+    for i in range(7):
+        all_column_name.append(f'W{i+2} - Technical(on Scale of 5)')
+
+    print('----------------------Average of all weeks----------------------')
+    df['avg_of_all_weeks'] = df[all_column_name].apply(
+        pd.to_numeric).mean(axis=1)
+    # print(col)
+    print('----------------------Top Performers All Week----------------------')
+    df = df.sort_values(by=['avg_of_all_weeks'], ascending=False)
+    print(df.head(5))
+
+    # for i in data_all:
+    #     print(i)
+
+
+df_list_of_nv = []
+
+
+def avg_finder(x):
+    mark_list = []
+    for i in range(8):
+        # print(f'NV{i+1}')
+        # print(x)
+        if f'NV{i+1}' in x:
+            if x[f'NV{i+1}'] != 0:
+                mark_list.append(x[f'NV{i+1}'])
+        else:
+            break
+    if len(mark_list) == 0:
+        return 0
+    else:
+        return round(sum(mark_list)/len(mark_list), 2)
+
+
+def read_consolidated_report(file_name):
+    # event_body = event['body']
+    # event_body = (json.loads(event_body))
+    file_names = {
+        'b1': 'JEE FS Devops Cloud(GCP) 48days - 30-Nov-2021',
+        'b2': '.NET Core',
+        'b3':'JEE FS Devops Cloud(GCP) 48days - 02-Dec-2021',
+        'b4': 'CG - BI - V5 DB ETL Testing',
+        'b5': 'V&V - Automation Testing (Selenium+Java)',
+        'b6': 'UFT+C#+VB Script',
+        'b7': 'Systems C with Linux'
+    }
+    scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
+             "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
+    creds = ServiceAccountCredentials.from_json_keyfile_name(
+        "creds.json", scope)
+    client = gspread.authorize(creds)
+
+    # file = client.open('UFT+C#+VB Script')
+    # file = client.open('.NET Core')
+    # file = client.open('JEE FS Devops Cloud(GCP) 48days - 30-Nov-2021')
+    file = client.open(file_names[file_name])
+    
+    m1_imp_report = read_m1_improvement_report(file=file)
+
+    is_improvement_empty = m1_imp_report['is_Empty']
+    improvement_stats = 'No Data'
+    if is_improvement_empty == False:
+        if m1_imp_report['stats']['Exam_Details'] != None:
+            improvement_stats = m1_imp_report['stats']['Exam_Details']
+        improvement_df = m1_imp_report['df']
+        improvement_stats = m1_imp_report['stats']
+    M1_sheet = file.worksheet('CG_M1')
+
+    full_data = M1_sheet.get_all_values()
+    exam_details_list = full_data[0:9]
+    data = full_data[10:]
+    headers = full_data[9]
+    df = pd.DataFrame(data, columns=headers)
+    df['Capgemini Email ID'] = df['Capgemini Email ID'].str.upper() # this is M1 df
+
+    M1_df = pd.DataFrame()
+    M1_df['Email Id'] = df['Capgemini Email ID']
+    M1_df['M1'] = df['TOTAL']
+
+    NV_Stats = {'NV1': None, 'NV2': None, 'NV3': None, 'NV4': None,
+                'NV5': None, 'NV6': None, 'NV7': None, 'NV8': None}
+    nv_all_exam_data = pd.DataFrame()
+    for i in NV_Stats:
+        NV_Stats[i] = read_nv_report(file.worksheet(i), i)
+
+    nv_all_exam_data = pd.concat(df_list_of_nv)
+    nv_all_exam_data = nv_all_exam_data.sort_values('Email Id')
+
+    
+
+
+    nv_all_exam_data = nv_all_exam_data.drop(
+        columns=['EmpId', 'Points received', 'Points scored', 'Is Passed', 'First Name', 'Last Name'], errors='ignore')
+    nv_all_exam_data = nv_all_exam_data.pivot_table(
+        'Percentage', ['Email Id'], 'Exam Name')
+    nv_all_exam_data = nv_all_exam_data.fillna(0)
+    nv_all_exam_data['Avg_Of_NV'] = nv_all_exam_data.apply(
+        lambda row: avg_finder(row), axis=1)
+    
+
+    nv_all_exam_data_with_m1 = pd.merge(
+        M1_df, nv_all_exam_data, on='Email Id', how='left')
+
+
+    
+    nv_all_exam_data_with_m1['Difference_M1_and_NV'] = nv_all_exam_data_with_m1['M1'].apply(pd.to_numeric, errors='coerce') - \
+        nv_all_exam_data_with_m1['Avg_Of_NV']
+    if is_improvement_empty == False:
+        nv_all_exam_data_with_m1 = pd.merge(nv_all_exam_data_with_m1, improvement_df, on='Email Id', how='left')
+
+
+    
+
+    name_email_df = pd.DataFrame()
+    name_email_df['Name'] = df['Name']
+    name_email_df['Email Id'] = df['Capgemini Email ID']
+
+    
+
+    nv_all_exam_data = pd.merge(
+        name_email_df, nv_all_exam_data_with_m1, on='Email Id', how='left')
+
+    nv_all_exam_data = nv_all_exam_data.rename(
+        columns={'Email Id': 'Email_Id'})
+    # nv_all_exam_data.to_excel("output.xlsx",
+            #  sheet_name='Sheet_name_1') 
+    
+    
+
+    nv_all_exam_data = nv_all_exam_data.round(2).to_dict('records')
+
+    exam_details = {}
+    for i in range(len(exam_details_list)):
+        if exam_details_list[i][0] != '':
+            exam_details[exam_details_list[i][0]] = exam_details_list[i][1]
+
+    Pass = 0  # greater than 60
+    fail = 0  # less than 60 and greater than 0 or 0
+    drop_out = 0  # status = Drop Out
+    absent = 0  # status =Absent
+    not_able_to_submit = 0  # status = Not able to submit
+    avg_pass_mark = 0
+    avg_fail_mark = 0
+
+    drop_out = len(df.loc[df['Status'] == 'Drop Out'].index)
+    df = df[df.Status != 'Drop Out']
+
+    absent = len(df.loc[df['Status'] == 'Absent'].index)
+    df = df[df.Status != 'Absent']
+
+    not_able_to_submit = len(
+        df.loc[df['Status'] == 'Not able to submit'].index)
+    df = df[df.Status != 'Not able to submit']
+
+    fail_df = df.loc[df['Improvement_counter'] == '1']
+    fail_df["TOTAL"] = fail_df["TOTAL"].apply(pd.to_numeric)
+    avg_fail_mark = fail_df['TOTAL'].mean()
+    fail = len(fail_df.index)
+    df = df[df.Improvement_counter != 1]
+
+    Pass_df = df.loc[df['Improvement_counter'] == '0']
+    avg_pass_mark = Pass_df['TOTAL'].apply(pd.to_numeric).mean()
+    Pass_df['TOTAL'] = Pass_df['TOTAL'].apply(pd.to_numeric)
+    Pass = len(Pass_df.index)
+
+    pass_percentage = {
+        "60-70": round(Pass_df[(Pass_df['TOTAL'] >= 60) & (Pass_df['TOTAL'] < 70)]['TOTAL'].sum() / Pass_df['TOTAL'].sum() * 100, 2),
+        "70-80": round(Pass_df[(Pass_df['TOTAL'] >= 70) & (Pass_df['TOTAL'] < 80)]['TOTAL'].sum() / Pass_df['TOTAL'].sum() * 100, 2),
+        "80-90": round(Pass_df[(Pass_df['TOTAL'] >= 80) & (Pass_df['TOTAL'] < 90)]['TOTAL'].sum() / Pass_df['TOTAL'].sum() * 100, 2),
+        "90-100": round(Pass_df[(Pass_df['TOTAL'] >= 90) & (Pass_df['TOTAL'] <= 100)]['TOTAL'].sum() / Pass_df['TOTAL'].sum() * 100, 2),
+    }
+
+    fail_percentage = {
+        "0-25": round(fail_df[(fail_df['TOTAL'] >= 0) & (fail_df['TOTAL'] < 25)]['TOTAL'].sum() / fail_df['TOTAL'].sum() * 100, 2),
+        "25-50": round(fail_df[(fail_df['TOTAL'] >= 25) & (fail_df['TOTAL'] < 50)]['TOTAL'].sum() / fail_df['TOTAL'].sum() * 100, 2),
+        "50-55": round(fail_df[(fail_df['TOTAL'] >= 50) & (fail_df['TOTAL'] < 55)]['TOTAL'].sum() / fail_df['TOTAL'].sum() * 100, 2),
+        "55-59.99": round(fail_df[(fail_df['TOTAL'] >= 55) & (fail_df['TOTAL'] <= 59.99)]['TOTAL'].sum() / fail_df['TOTAL'].sum() * 100, 2),
+    }
+    result = {'M1': {'Pass': Pass, 'Fail': fail, 'Drop_Out': drop_out, 'absent': absent, 'Not_Able_To_Submit': not_able_to_submit, 'Avg_Pass_Mark': round(avg_pass_mark, 2),
+                     'Avg_Fail_Mark': round(avg_fail_mark, 2), 'Pass_Percentage': pass_percentage, 'Fail_Percentage': fail_percentage},'Improvent_M1': improvement_stats, 'NV': NV_Stats, 'Sprint_1': read_sprint(file, 'Sprint_1'), 'Sprint_2': read_sprint(file, 'Sprint_2'), 'All_Exam_Data': nv_all_exam_data}
+
+    return result
+
+
+def read_nv_report(sheet, exam_name):
+    full_data = sheet.get_all_values()
+    exam_details_list = full_data[0:9]
+    exam_details = {}
+    for i in range(len(exam_details_list)):
+        if exam_details_list[i][0] != '':
+            exam_details[exam_details_list[i]
+                         [0].strip()] = exam_details_list[i][1].strip()
+
+    if exam_details['Status'] != 'Done':
+        return {'Result': 'Result Not Available', 'Exam Details': exam_details}
+    data = full_data[10:]
+    headers = full_data[9]
+    df = pd.DataFrame(data, columns=headers)
+    df['Exam Name'] = exam_name
+    df['Email Id'] = df['Email Id'].str.upper()
+    df_list_of_nv.append(df)
+
+    Pass = 0  # greater than 60
+    fail = 0  # less than 60 and greater than 0 or 0
+    avg_pass_mark = 0
+    avg_fail_mark = 0
+
+    fail_df = df.loc[df['Is Passed'] == 'Fail']
+    fail_df["Percentage"] = fail_df["Percentage"].apply(pd.to_numeric)
+    avg_fail_mark = fail_df['Percentage'].mean()
+    fail = len(fail_df.index)
+    df = df[df['Is Passed'] != 1]
+
+    Pass_df = df.loc[df['Is Passed'] == 'PASS']
+    avg_pass_mark = Pass_df['Percentage'].apply(pd.to_numeric).mean()
+    Pass_df['Percentage'] = Pass_df['Percentage'].apply(pd.to_numeric)
+    Pass = len(Pass_df.index)
+    pass_percentage = {"60-70":0, "70-80":0, "80-90":0, "90-100":0}
+    fail_percentage = {"0-25":0, "25-50":0, "50-55":0, "55-59.99":0}
+
+    if Pass_df.empty == False:
+
+        pass_percentage = {
+            "60-70": round(Pass_df[(Pass_df['Percentage'] >= 60) & (Pass_df['Percentage'] < 70)]['Percentage'].sum() / Pass_df['Percentage'].sum() * 100, 2),
+            "70-80": round(Pass_df[(Pass_df['Percentage'] >= 70) & (Pass_df['Percentage'] < 80)]['Percentage'].sum() / Pass_df['Percentage'].sum() * 100, 2),
+            "80-90": round(Pass_df[(Pass_df['Percentage'] >= 80) & (Pass_df['Percentage'] < 90)]['Percentage'].sum() / Pass_df['Percentage'].sum() * 100, 2),
+            "90-100": round(Pass_df[(Pass_df['Percentage'] >= 90) & (Pass_df['Percentage'] <= 100)]['Percentage'].sum() / Pass_df['Percentage'].sum() * 100, 2),
+        }
+    
+    if fail_df.empty == False:
+
+        fail_percentage = {
+            "0-25": round(fail_df[(fail_df['Percentage'] >= 0) & (fail_df['Percentage'] < 25)]['Percentage'].sum() / fail_df['Percentage'].sum() * 100, 2),
+            "25-50": round(fail_df[(fail_df['Percentage'] >= 25) & (fail_df['Percentage'] < 50)]['Percentage'].sum() / fail_df['Percentage'].sum() * 100, 2),
+            "50-55": round(fail_df[(fail_df['Percentage'] >= 50) & (fail_df['Percentage'] < 55)]['Percentage'].sum() / fail_df['Percentage'].sum() * 100, 2),
+            "55-59.99": round(fail_df[(fail_df['Percentage'] >= 55) & (fail_df['Percentage'] <= 59.99)]['Percentage'].sum() / fail_df['Percentage'].sum() * 100, 2),
+        }
+
+    return {
+        'Result': 'Exam Done',
+        'Total_Count': fail + Pass,
+        'Pass': Pass,
+        'Fail': fail,
+        'Average_Pass Mark': round(avg_pass_mark, 2),
+        'Average_Fail Mark': round(avg_fail_mark, 2),
+        'Pass_Percentage': pass_percentage,
+        'Fail_Percentage': fail_percentage,
+        'Exam_Details': exam_details,
+    }
+
+
+# read_with_pandas()
+# read_consolidated_report()
+
+def read_sprint(file, sheet_name):
+    sheet = file.worksheet(sheet_name)
+
+    try:
+
+        full_data = sheet.get_all_values()
+        exam_details_list = full_data[0:9]
+        data = full_data[10:]
+        headers = full_data[9]
+        df = pd.DataFrame(data, columns=headers)
+
+        exam_details = {}
+        for i in range(len(exam_details_list)):
+            if exam_details_list[i][0] != '':
+                exam_details[exam_details_list[i][0]] = exam_details_list[i][1]
+
+        average_marks = df['Marks'].apply(pd.to_numeric).mean()
+
+        return {
+            "Exam_Details": exam_details,
+            "Average_Marks": round(average_marks, 2),
+        }
+    except Exception as e:
+        return {
+            "Exam_Details": 'Not Available',
+            "Average_Marks": 'Not Availble',
+            'Error': f'''{e}'''
+        }
+
+
+
+def read_m1_improvement_report(file):
+    try:
+        sheet = file.worksheet('CG_M1_Improvement')
+    except:
+        return {'is_Empty': True, 'df': None, 'stats': None}
+    full_data = sheet.get_all_values()
+    exam_details_list = full_data[0:9]
+    exam_details = {}
+    for i in range(len(exam_details_list)):
+        if exam_details_list[i][0] != '':
+            exam_details[exam_details_list[i][0].strip()] = exam_details_list[i][1].strip()
+    print(exam_details)
+    if exam_details['Status'] != 'Done':
+        return {'is_Empty': True, 'stats':{'Exam_Details': exam_details}}
+    data = full_data[10:]
+    headers = full_data[9]
+    df = pd.DataFrame(data, columns=headers)
+
+    imprv_fail_df = df.loc[df['Improvement_counter'] == '2']
+    imprv_fail_df["Improvement_Total"] = imprv_fail_df["Improvement_Total"].apply(pd.to_numeric)
+    avg_fail_mark = imprv_fail_df['Improvement_Total'].mean()
+    fail = len(imprv_fail_df.index)
+    df = df[df.Improvement_counter != 1]
+
+    imprv_pass_df = df.loc[df['Improvement_counter'] == '1']
+    avg_pass_mark = imprv_pass_df['Improvement_Total'].apply(pd.to_numeric).mean()
+    imprv_pass_df['Improvement_Total'] = imprv_pass_df['Improvement_Total'].apply(pd.to_numeric)
+    Pass = len(imprv_pass_df.index)
+
+    pass_percentage = {"60-70":0, "70-80":0, "80-90":0, "90-100":0}
+    fail_percentage = {"0-25":0, "25-50":0, "50-55":0, "55-59.99":0}
+
+    if imprv_pass_df.empty == False:
+
+        pass_percentage = {
+            "60-70": round(imprv_pass_df[(imprv_pass_df['Improvement_Total'] >= 60) & (imprv_pass_df['Improvement_Total'] < 70)]['Improvement_Total'].sum() / imprv_pass_df['Improvement_Total'].sum() * 100, 2),
+            "70-80": round(imprv_pass_df[(imprv_pass_df['Improvement_Total'] >= 70) & (imprv_pass_df['Improvement_Total'] < 80)]['Improvement_Total'].sum() / imprv_pass_df['Improvement_Total'].sum() * 100, 2),
+            "80-90": round(imprv_pass_df[(imprv_pass_df['Improvement_Total'] >= 80) & (imprv_pass_df['Improvement_Total'] < 90)]['Improvement_Total'].sum() / imprv_pass_df['Improvement_Total'].sum() * 100, 2),
+            "90-100": round(imprv_pass_df[(imprv_pass_df['Improvement_Total'] >= 90) & (imprv_pass_df['Improvement_Total'] <= 100)]['Improvement_Total'].sum() / imprv_pass_df['Improvement_Total'].sum() * 100, 2),
+        }
+
+    if imprv_fail_df.empty == False:
+
+        fail_percentage = {
+            "0-25": round(imprv_fail_df[(imprv_fail_df['Improvement_Total'] >= 0) & (imprv_fail_df['Improvement_Total'] < 25)]['Improvement_Total'].sum() / imprv_fail_df['Improvement_Total'].sum() * 100, 2),
+            "25-50": round(imprv_fail_df[(imprv_fail_df['Improvement_Total'] >= 25) & (imprv_fail_df['Improvement_Total'] < 50)]['Improvement_Total'].sum() / imprv_fail_df['Improvement_Total'].sum() * 100, 2),
+            "50-55": round(imprv_fail_df[(imprv_fail_df['Improvement_Total'] >= 50) & (imprv_fail_df['Improvement_Total'] < 55)]['Improvement_Total'].sum() / imprv_fail_df['Improvement_Total'].sum() * 100, 2),
+            "55-59.99": round(imprv_fail_df[(imprv_fail_df['Improvement_Total'] >= 55) & (imprv_fail_df['Improvement_Total'] <= 59.99)]['Improvement_Total'].sum() / imprv_fail_df['Improvement_Total'].sum() * 100, 2),
+        }
+    df = df[['Capgemini Email ID', 'Improvement_Total']].copy()
+    
+    df = df.rename(
+        columns={'Capgemini Email ID': 'Email Id'})
+    return {
+        'stats':{
+        "Exam_Details": exam_details,
+        "Average_Pass_Marks": round(avg_pass_mark, 2),
+        "Average_Fail_Marks": round(avg_fail_mark, 2),
+        "Pass": Pass,
+        "Fail": fail,
+        "Pass_Percentage": pass_percentage,
+        "Fail_Percentage": fail_percentage
+        },
+        "df": df,
+        'is_Empty': False
+    }
+
+
+# print(json.dumps(read_consolidated_report('b3'), indent=4))
+# print(read_consolidated_report('b4'))

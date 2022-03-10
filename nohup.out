@@ -1,0 +1,1047 @@
+['b1']
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py:454: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  imprv_fail_df["Improvement_Total"] = imprv_fail_df["Improvement_Total"].apply(pd.to_numeric)
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py:461: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  imprv_pass_df['Improvement_Total'] = imprv_pass_df['Improvement_Total'].apply(pd.to_numeric)
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py:273: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  fail_df["TOTAL"] = fail_df["TOTAL"].apply(pd.to_numeric)
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py:280: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  Pass_df['TOTAL'] = Pass_df['TOTAL'].apply(pd.to_numeric)
+[19/Feb/2022 05:03:46] "GET /download_c/?file-names=b1 HTTP/1.1" 200 9525
+['b1']
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py:454: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  imprv_fail_df["Improvement_Total"] = imprv_fail_df["Improvement_Total"].apply(pd.to_numeric)
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py:461: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  imprv_pass_df['Improvement_Total'] = imprv_pass_df['Improvement_Total'].apply(pd.to_numeric)
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py:273: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  fail_df["TOTAL"] = fail_df["TOTAL"].apply(pd.to_numeric)
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py:280: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  Pass_df['TOTAL'] = Pass_df['TOTAL'].apply(pd.to_numeric)
+[19/Feb/2022 05:35:34] "GET /download_c/?file-names=b1 HTTP/1.1" 200 9525
+['b1.b2']
+Internal Server Error: /download_c/
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/views.py", line 25, in download_consolidated_report
+    cons_report = read_consolidated_report(i, True)
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py", line 131, in read_consolidated_report
+    file = client.open(file_names[file_name])
+KeyError: 'b1.b2'
+[19/Feb/2022 05:36:24] "GET /download_c/?file-names=b1.b2 HTTP/1.1" 500 65722
+Not Found: /favicon.ico
+[19/Feb/2022 05:36:26] "GET /favicon.ico HTTP/1.1" 404 2431
+['b1', 'b2']
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py:454: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  imprv_fail_df["Improvement_Total"] = imprv_fail_df["Improvement_Total"].apply(pd.to_numeric)
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py:461: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  imprv_pass_df['Improvement_Total'] = imprv_pass_df['Improvement_Total'].apply(pd.to_numeric)
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py:273: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  fail_df["TOTAL"] = fail_df["TOTAL"].apply(pd.to_numeric)
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py:280: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  Pass_df['TOTAL'] = Pass_df['TOTAL'].apply(pd.to_numeric)
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py:273: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  fail_df["TOTAL"] = fail_df["TOTAL"].apply(pd.to_numeric)
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py:280: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  Pass_df['TOTAL'] = Pass_df['TOTAL'].apply(pd.to_numeric)
+[19/Feb/2022 05:37:48] "GET /download_c/?file-names=b1,b2 HTTP/1.1" 200 14963
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+February 19, 2022 - 07:26:48
+Django version 4.0.2, using settings 'CGReport.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/commands/runserver.py", line 124, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/base.py", line 438, in check
+    all_issues = checks.run_checks(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/registry.py", line 77, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/urls.py", line 23, in check_resolver
+    return check_method()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 448, in check
+    for pattern in self.url_patterns:
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 634, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 627, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 844, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 981, in get_code
+  File "<frozen importlib._bootstrap_external>", line 911, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/urls.py", line 25
+    path('wsr/', wsr_report)
+    ^
+SyntaxError: invalid syntax
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/commands/runserver.py", line 124, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/base.py", line 438, in check
+    all_issues = checks.run_checks(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/registry.py", line 77, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/urls.py", line 23, in check_resolver
+    return check_method()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 448, in check
+    for pattern in self.url_patterns:
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 634, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 627, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/urls.py", line 18, in <module>
+    from .views import index, wpr_report, download_consolidated_report, wsr_report
+ImportError: cannot import name 'wsr_report' from 'CGReport.views' (/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/views.py)
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+February 19, 2022 - 07:28:26
+Django version 4.0.2, using settings 'CGReport.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/commands/runserver.py", line 124, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/base.py", line 438, in check
+    all_issues = checks.run_checks(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/registry.py", line 77, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/urls.py", line 23, in check_resolver
+    return check_method()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 448, in check
+    for pattern in self.url_patterns:
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 634, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 627, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/urls.py", line 18, in <module>
+    from .views import index, wpr_report, download_consolidated_report, wsr_report
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/views.py", line 3, in <module>
+    from .sheets2 import read_batch_lsr
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets2.py", line 46
+    creds = ServiceAccountCredentials.from_json_keyfile_name(
+                                                            ^
+IndentationError: unindent does not match any outer indentation level
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets2.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+4     12-Feb-22
+9     21-Feb-22
+19    02-Apr-22
+22    16-Apr-22
+Name: Start_Date, dtype: object
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+February 19, 2022 - 07:30:08
+Django version 4.0.2, using settings 'CGReport.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets2.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+4     12-Feb-22
+9     21-Feb-22
+19    02-Apr-22
+22    16-Apr-22
+Name: Start_Date, dtype: object
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/commands/runserver.py", line 124, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/base.py", line 438, in check
+    all_issues = checks.run_checks(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/registry.py", line 77, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/urls.py", line 23, in check_resolver
+    return check_method()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 448, in check
+    for pattern in self.url_patterns:
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 634, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 627, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/urls.py", line 18, in <module>
+    from .views import index, wpr_report, download_consolidated_report, wsr_report
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/views.py", line 3, in <module>
+    from .sheets2 import read_batch_lsr
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets2.py", line 64, in <module>
+    read_batch_lsr()
+TypeError: read_batch_lsr() missing 1 required positional argument: 'file_name'
+4     12-Feb-22
+9     21-Feb-22
+19    02-Apr-22
+22    16-Apr-22
+Name: Start_Date, dtype: object
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets2.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+4     12-Feb-22
+9     21-Feb-22
+19    02-Apr-22
+22    16-Apr-22
+Name: Start_Date, dtype: object
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+February 19, 2022 - 07:31:02
+Django version 4.0.2, using settings 'CGReport.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets2.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+February 19, 2022 - 07:31:08
+Django version 4.0.2, using settings 'CGReport.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets2.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+{'batch_lsr': [{'Week No.': '1', 'Batch Mentor': 'Ashish Bansal', 'Learning status': 'Batch started with day 1 soft skill session .From 24th Dec onwards batch started technical session ,they started with basic concepts of JAVA ,object method calling .Trainer had explained runtime polymorphism,overiding and abstract class concepts and exceptions.'}, {'Week No.': '2', 'Batch Mentor': 'Ashish Bansal', 'Learning status': 'This week batch started with Collections framework and in which scenario to use List, Set, Map, Queue interfaces and classes.Trainer had covered the following topics;Treeset, Comparator, Comparable concepts using couple of examples,how to work with HashMap concept using Gmail validation program and we did varies looping approaches to print ArrayList,Testing Concept, Annotations of JUnit, implementation of JUnit and Threading concept and implementation and about functional interface, lambda expression, stream API, inner class.'}, {'Week No.': '3', 'Batch Mentor': 'Ashish Bansal', 'Learning status': 'This week trainer had given them core java assessment. Trainer had covered topics which include the mentioned topics mysql database installation and create a employee database. 6 participants status are yet to found and they have not \n  maven repository using java, developing application using JDBC. Batch is not responding to trainer and hesitance to share the screen when asked for .6 participants status is not sure as they are not reachable'}, {'Week No.': '4', 'Batch Mentor': 'Ashish Bansal', 'Learning status': 'This week they work on the project and corrected errors.Discuss about ORM concepts using Hibernate'}, {'Week No.': '5', 'Batch Mentor': 'Ashish Bansal', 'Learning status': 'This week batch had covered the following topics : hibernate orm tool and assignment on task embedded concept in hibernate,hibernate annotation concepts and one to one, one to many, many to many, many to one relationship in hibernate,pring framework and explained about tightly, loosely coupled and dependency injection concepts in depth and spring framework,how to work with spring.xml properties and its function.'}, {'Week No.': '6', 'Batch Mentor': 'Ashish Bansal', 'Learning status': "This week batch had covered the mentioned topics:what is servlets, how they are useful, explained about doGet and doPost operations in it,pring framework,what is it, how it will be used, where it will be used in industry, how to create a project using spring.in and explain,reate a basic project using string framework and create some operations like get Accounts, update and remove, create a custom exceptions,how to work with sql database queries in spring project and get data and alidation and verification in spring framework, spring dto concept, a task to apply validations, customexceptions, DTO's class,create customRepository, Spring data JPA for Student table"}, {'Week No.': '7', 'Batch Mentor': 'Ashish Bansal', 'Learning status': "Day by Day Training completion.\n \n 31-1-22 for monday, Trainer explained what is servlets, how they are useful, explained about doGet and doPost operations in it.\n 1-2-22 for tuesday, Trainer is on leave for personal reasons, he given an assignment on sql.\n 2-2-22 for wednesday, Trainer explained spring framework,what is it, how it will be used, where it will be used in industry, how to create a project using spring.in and explain .\n 3-2-22 for thursday, create a basic project using string framework and create some operations like get Accounts, update and remove, create a custom exceptions.\n 4-2-22 for friday, Trainer had shown how to work with sql database queries in spring project and get data\n 5-2-22 for saturday, Trainer explained validation and verification in spring framework, spring dto concept, a task to apply validations, customexceptions, DTO's class,create customRepository, Spring data JPA for Student table.\n \n The training is on track and the participants don't find any challenges with the trainer. The batch responsiveness is still low and the actual attendance on daily basis has fallen down to 44. The detailed report for this shall be shared in the attendance report."}, {'Week No.': '8', 'Batch Mentor': 'Ashish Bansal', 'Learning status': '7thFeb & 8th Feb -2022- they had practiced on spring boot application\n 9th Feb 2022- soft skill class was conducted on email writting, swot analysis, resume writing\n 10th Feb 2022 -They were involved in sprint 1 project'}, {'Week No.': '9', 'Batch Mentor': 'Ashish Bansal', 'Learning status': 'NA'}]}
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+February 19, 2022 - 07:31:46
+Django version 4.0.2, using settings 'CGReport.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+{'batch_lsr': [{'Week No.': '1', 'Batch Mentor': 'Ashish Bansal', 'Learning status': 'Batch started with day 1 soft skill session .From 24th Dec onwards batch started technical session ,they started with basic concepts of JAVA ,object method calling .Trainer had explained runtime polymorphism,overiding and abstract class concepts and exceptions.'}, {'Week No.': '2', 'Batch Mentor': 'Ashish Bansal', 'Learning status': 'This week batch started with Collections framework and in which scenario to use List, Set, Map, Queue interfaces and classes.Trainer had covered the following topics;Treeset, Comparator, Comparable concepts using couple of examples,how to work with HashMap concept using Gmail validation program and we did varies looping approaches to print ArrayList,Testing Concept, Annotations of JUnit, implementation of JUnit and Threading concept and implementation and about functional interface, lambda expression, stream API, inner class.'}, {'Week No.': '3', 'Batch Mentor': 'Ashish Bansal', 'Learning status': 'This week trainer had given them core java assessment. Trainer had covered topics which include the mentioned topics mysql database installation and create a employee database. 6 participants status are yet to found and they have not \n  maven repository using java, developing application using JDBC. Batch is not responding to trainer and hesitance to share the screen when asked for .6 participants status is not sure as they are not reachable'}, {'Week No.': '4', 'Batch Mentor': 'Ashish Bansal', 'Learning status': 'This week they work on the project and corrected errors.Discuss about ORM concepts using Hibernate'}, {'Week No.': '5', 'Batch Mentor': 'Ashish Bansal', 'Learning status': 'This week batch had covered the following topics : hibernate orm tool and assignment on task embedded concept in hibernate,hibernate annotation concepts and one to one, one to many, many to many, many to one relationship in hibernate,pring framework and explained about tightly, loosely coupled and dependency injection concepts in depth and spring framework,how to work with spring.xml properties and its function.'}, {'Week No.': '6', 'Batch Mentor': 'Ashish Bansal', 'Learning status': "This week batch had covered the mentioned topics:what is servlets, how they are useful, explained about doGet and doPost operations in it,pring framework,what is it, how it will be used, where it will be used in industry, how to create a project using spring.in and explain,reate a basic project using string framework and create some operations like get Accounts, update and remove, create a custom exceptions,how to work with sql database queries in spring project and get data and alidation and verification in spring framework, spring dto concept, a task to apply validations, customexceptions, DTO's class,create customRepository, Spring data JPA for Student table"}, {'Week No.': '7', 'Batch Mentor': 'Ashish Bansal', 'Learning status': "Day by Day Training completion.\n \n 31-1-22 for monday, Trainer explained what is servlets, how they are useful, explained about doGet and doPost operations in it.\n 1-2-22 for tuesday, Trainer is on leave for personal reasons, he given an assignment on sql.\n 2-2-22 for wednesday, Trainer explained spring framework,what is it, how it will be used, where it will be used in industry, how to create a project using spring.in and explain .\n 3-2-22 for thursday, create a basic project using string framework and create some operations like get Accounts, update and remove, create a custom exceptions.\n 4-2-22 for friday, Trainer had shown how to work with sql database queries in spring project and get data\n 5-2-22 for saturday, Trainer explained validation and verification in spring framework, spring dto concept, a task to apply validations, customexceptions, DTO's class,create customRepository, Spring data JPA for Student table.\n \n The training is on track and the participants don't find any challenges with the trainer. The batch responsiveness is still low and the actual attendance on daily basis has fallen down to 44. The detailed report for this shall be shared in the attendance report."}, {'Week No.': '8', 'Batch Mentor': 'Ashish Bansal', 'Learning status': '7thFeb & 8th Feb -2022- they had practiced on spring boot application\n 9th Feb 2022- soft skill class was conducted on email writting, swot analysis, resume writing\n 10th Feb 2022 -They were involved in sprint 1 project'}, {'Week No.': '9', 'Batch Mentor': 'Ashish Bansal', 'Learning status': 'NA'}]}
+[19/Feb/2022 07:33:14] "GET /wsr/?file-name=b1 HTTP/1.1" 200 4540
+Not Found: /favicon.ico
+[19/Feb/2022 07:33:15] "GET /favicon.ico HTTP/1.1" 404 2535
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets2.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/gspread/client.py", line 119, in open
+    properties = finditem(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/gspread/utils.py", line 88, in finditem
+    return next(item for item in seq if func(item))
+StopIteration
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/commands/runserver.py", line 124, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/base.py", line 438, in check
+    all_issues = checks.run_checks(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/registry.py", line 77, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/urls.py", line 23, in check_resolver
+    return check_method()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 448, in check
+    for pattern in self.url_patterns:
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 634, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 627, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/urls.py", line 18, in <module>
+    from .views import index, wpr_report, download_consolidated_report, wsr_report
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/views.py", line 3, in <module>
+    from .sheets2 import read_batch_lsr
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets2.py", line 65, in <module>
+    read_batch_lsr('b1')
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets2.py", line 50, in read_batch_lsr
+    file = client.open('Batch_LSR _JA-1')
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/gspread/client.py", line 129, in open
+    raise SpreadsheetNotFound
+gspread.exceptions.SpreadsheetNotFound
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/commands/runserver.py", line 124, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/base.py", line 438, in check
+    all_issues = checks.run_checks(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/registry.py", line 77, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/urls.py", line 23, in check_resolver
+    return check_method()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 448, in check
+    for pattern in self.url_patterns:
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 634, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 627, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/urls.py", line 18, in <module>
+    from .views import index, wpr_report, download_consolidated_report, wsr_report
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/views.py", line 2, in <module>
+    from .sheets import read_consolidated_report, read_wpa_report
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py", line 91
+    print(above_avg_technical_week_wise)
+    ^
+SyntaxError: invalid syntax
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/commands/runserver.py", line 124, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/base.py", line 438, in check
+    all_issues = checks.run_checks(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/registry.py", line 77, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/urls.py", line 23, in check_resolver
+    return check_method()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 448, in check
+    for pattern in self.url_patterns:
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 634, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 627, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/urls.py", line 18, in <module>
+    from .views import index, wpr_report, download_consolidated_report, wsr_report
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/views.py", line 2, in <module>
+    from .sheets import read_consolidated_report, read_wpa_report
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py", line 88
+    print(above_avg_technical_week_wise)
+    ^
+SyntaxError: invalid syntax
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/commands/runserver.py", line 124, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/base.py", line 438, in check
+    all_issues = checks.run_checks(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/registry.py", line 77, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/urls.py", line 23, in check_resolver
+    return check_method()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 448, in check
+    for pattern in self.url_patterns:
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 634, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 627, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/urls.py", line 18, in <module>
+    from .views import index, wpr_report, download_consolidated_report, wsr_report
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/views.py", line 2, in <module>
+    from .sheets import read_consolidated_report, read_wpa_report
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py", line 88
+    display(above_avg_technical_week_wise)
+    ^
+SyntaxError: invalid syntax
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/commands/runserver.py", line 124, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/base.py", line 438, in check
+    all_issues = checks.run_checks(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/registry.py", line 77, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/urls.py", line 23, in check_resolver
+    return check_method()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 448, in check
+    for pattern in self.url_patterns:
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 634, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 627, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/urls.py", line 18, in <module>
+    from .views import index, wpr_report, download_consolidated_report, wsr_report
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/views.py", line 2, in <module>
+    from .sheets import read_consolidated_report, read_wpa_report
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py", line 88
+    display(above_avg_technical_week_wise)
+    ^
+SyntaxError: invalid syntax
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/commands/runserver.py", line 124, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/base.py", line 438, in check
+    all_issues = checks.run_checks(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/registry.py", line 77, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/urls.py", line 23, in check_resolver
+    return check_method()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 448, in check
+    for pattern in self.url_patterns:
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 634, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 627, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/urls.py", line 18, in <module>
+    from .views import index, wpr_report, download_consolidated_report, wsr_report
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/views.py", line 2, in <module>
+    from .sheets import read_consolidated_report, read_wpa_report
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py", line 88
+    display(above_avg_technical_week_wise)
+    ^
+SyntaxError: invalid syntax
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/commands/runserver.py", line 124, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/base.py", line 438, in check
+    all_issues = checks.run_checks(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/registry.py", line 77, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/urls.py", line 23, in check_resolver
+    return check_method()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 448, in check
+    for pattern in self.url_patterns:
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 634, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 627, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/urls.py", line 18, in <module>
+    from .views import index, wpr_report, download_consolidated_report, wsr_report
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/views.py", line 2, in <module>
+    from .sheets import read_consolidated_report, read_wpa_report
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py", line 88
+    display(above_avg_technical_week_wise[i])
+    ^
+SyntaxError: invalid syntax
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/commands/runserver.py", line 124, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/management/base.py", line 438, in check
+    all_issues = checks.run_checks(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/registry.py", line 77, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/core/checks/urls.py", line 23, in check_resolver
+    return check_method()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 448, in check
+    for pattern in self.url_patterns:
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 634, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 627, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/urls.py", line 18, in <module>
+    from .views import index, wpr_report, download_consolidated_report, wsr_report
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/views.py", line 2, in <module>
+    from .sheets import read_consolidated_report, read_wpa_report
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py", line 95, in <module>
+    read_wpa_report('b1')
+  File "/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py", line 87, in read_wpa_report
+    above_avg_technical_week_wise[i] = round(df[df[i].apply(lambda x: x.isnumeric())][i].apply(pd.to_numeric).gt(3))
+NameError: name 'above_avg_technical_week_wise' is not defined
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Series([], Name: W1-Technical, dtype: float16)
+0     1.0
+1     1.0
+2     1.0
+3     1.0
+5     1.0
+8     1.0
+9     1.0
+12    1.0
+13    1.0
+14    1.0
+19    1.0
+20    1.0
+22    1.0
+25    1.0
+26    1.0
+27    1.0
+30    1.0
+31    1.0
+32    1.0
+Name: W2-Technical, dtype: float16
+0     1.0
+1     1.0
+2     1.0
+3     1.0
+5     1.0
+8     1.0
+9     1.0
+12    1.0
+13    1.0
+14    1.0
+19    1.0
+20    1.0
+22    1.0
+25    1.0
+26    1.0
+27    1.0
+30    1.0
+31    1.0
+32    1.0
+Name: W3-Technical, dtype: float16
+0     1.0
+1     1.0
+2     1.0
+3     1.0
+5     1.0
+7     1.0
+8     0.0
+11    1.0
+13    1.0
+14    1.0
+15    1.0
+16    0.0
+17    1.0
+18    1.0
+19    1.0
+21    1.0
+22    1.0
+23    1.0
+25    1.0
+26    1.0
+27    1.0
+28    1.0
+29    1.0
+30    1.0
+32    0.0
+Name: W4-Technical, dtype: float16
+0     1.0
+1     1.0
+3     1.0
+7     1.0
+9     1.0
+11    1.0
+13    1.0
+14    1.0
+15    1.0
+16    0.0
+17    1.0
+18    1.0
+19    1.0
+21    1.0
+22    1.0
+23    1.0
+25    1.0
+26    1.0
+27    1.0
+28    1.0
+29    1.0
+30    1.0
+Name: W5-Technical, dtype: float16
+0     1.0
+1     1.0
+2     1.0
+3     1.0
+4     1.0
+5     1.0
+9     1.0
+10    1.0
+11    1.0
+12    1.0
+13    1.0
+14    1.0
+16    1.0
+20    1.0
+21    1.0
+22    1.0
+23    1.0
+29    1.0
+30    1.0
+31    1.0
+33    1.0
+Name: W6-Technical, dtype: float16
+0     1.0
+1     1.0
+2     1.0
+5     1.0
+16    1.0
+19    1.0
+20    1.0
+22    0.0
+23    0.0
+24    0.0
+25    0.0
+27    0.0
+29    0.0
+30    1.0
+31    1.0
+32    1.0
+33    1.0
+Name: W7-Technical, dtype: float16
+0     1.0
+1     1.0
+2     1.0
+5     1.0
+16    1.0
+19    1.0
+20    1.0
+22    0.0
+23    0.0
+24    0.0
+25    0.0
+27    0.0
+29    0.0
+30    1.0
+31    1.0
+32    1.0
+33    1.0
+Name: W8-Technical, dtype: float16
+0     1.0
+1     1.0
+2     1.0
+3     1.0
+4     1.0
+6     1.0
+11    1.0
+12    1.0
+14    1.0
+16    1.0
+17    1.0
+18    1.0
+19    1.0
+20    1.0
+25    0.0
+28    1.0
+30    1.0
+31    1.0
+32    1.0
+33    1.0
+Name: W9-Technical, dtype: float16
+0     1.0
+1     1.0
+2     1.0
+3     1.0
+4     1.0
+5     1.0
+6     1.0
+7     1.0
+8     1.0
+9     1.0
+10    1.0
+11    1.0
+12    1.0
+13    1.0
+14    1.0
+15    1.0
+16    1.0
+17    1.0
+18    1.0
+19    1.0
+20    1.0
+21    1.0
+22    1.0
+23    1.0
+24    1.0
+25    1.0
+26    1.0
+27    1.0
+28    1.0
+29    1.0
+30    1.0
+31    1.0
+32    1.0
+33    1.0
+Name: W10-Technical, dtype: float16
+/home/ubuntu/Desktop/google-sheet/new/CGReport/CGReport/sheets.py:94: UserWarning: DataFrame columns are not unique, some columns will be omitted.
+  return {'weeklyAvgStats': avg_technical_week_wise, 'allData': df.to_dict('records')}
+3
+  Week_No  Dropout/Abscondee_Count
+0       7                        1
+1       8                        2
+2
+  Week_No  Transfer-Out_Count
+0       5                   2
+  Week_No  Transfer-In_Count
+0       4                  2
+  Week_No  Dropout/Abscondee_Count  Transfer-Out_Count
+0       7                        1                 NaN
+1       8                        2                 NaN
+44
+39
+  Week_No  Dropout/Abscondee_Count  ...  Transfer-In_Count  Current_Batch_Size
+0       7                      1.0  ...                NaN                  39
+1       8                      2.0  ...                NaN                  39
+0       5                      NaN  ...                NaN                  39
+0       4                      NaN  ...                2.0                  39
+
+[4 rows x 5 columns]
+  Week_No   Batch Mentor  ... Intial_Size   Status
+0       1  Ashish Bansal  ...          47  Ongoing
+1       2  Ashish Bansal  ...          47  Ongoing
+2       3  Ashish Bansal  ...          47  Ongoing
+3       4  Ashish Bansal  ...          47  Ongoing
+4       5  Ashish Bansal  ...          47  Ongoing
+5       6  Ashish Bansal  ...          47  Ongoing
+6       7  Ashish Bansal  ...          47  Ongoing
+7       8  Ashish Bansal  ...          47  Ongoing
+8       9  Ashish Bansal  ...          47  Ongoing
+
+[9 rows x 18 columns]
+       Vendor  ...                                    Learning status
+0  Novelvista  ...  Batch started with day 1 soft skill session .F...
+1  Novelvista  ...  This week batch started with Collections frame...
+2  Novelvista  ...  This week trainer had given them core java ass...
+3  Novelvista  ...  This week they work on the project and correct...
+4  Novelvista  ...  This week batch had covered the following topi...
+5  Novelvista  ...  This week batch had covered the mentioned topi...
+6  Novelvista  ...  Day by Day Training completion.\n \n 31-1-22 f...
+7  Novelvista  ...  7thFeb & 8th Feb -2022- they had practiced on ...
+8  Novelvista  ...                                                 NA
+
+[9 rows x 16 columns]
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+February 20, 2022 - 10:54:49
+Django version 4.0.2, using settings 'CGReport.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+Error: That port is already in use.
