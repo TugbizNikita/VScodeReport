@@ -1,6 +1,6 @@
 from django.http import JsonResponse, HttpResponse
 from .sheets import read_consolidated_report, read_wpa_report
-from .sheets2 import read_batch_lsr, read_lsr, read_wpr, read_batch_consolidated, read_candidates
+from .sheets2 import read_batch_lsr, read_lsr, read_wpr, read_batch_consolidated, read_candidates, wpr_stats_common
 from .attendance import read_batch_attendance
 from io import BytesIO
 import pandas as pd
@@ -154,6 +154,7 @@ def validate_wsr_working(request):
             if(len(diff_col_list) > 0):
                 return JsonResponse({'Column name missing': diff_col_list})
             
+
             try:
                 schema = pa.DataFrameSchema({
                 "Sr.No": pa.Column(int, checks=pa.Check.le(10)),
@@ -326,6 +327,7 @@ def validate_candidates(request):
 
             diff_col = set(config_headers) - set(col_headers)
             diff_col_list = list(diff_col)
+            return JsonResponse({'Column name missing': diff_col_list})
             if(len(diff_col_list) > 0):
                 return JsonResponse({'Column name missing': diff_col_list})
             else:
@@ -337,4 +339,10 @@ def validate_candidates(request):
         
         return response
 
-
+def wpr_stats_comm(request):
+    file_name = request.GET.get('file-name')
+    print(file_name)
+    with BytesIO() as b:
+        wpr_stat = wpr_stats_common(file_name)   
+        return JsonResponse({'Sucess':wpr_stat})
+   

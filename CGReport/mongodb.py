@@ -11,7 +11,7 @@ def get_batch(Batch_Name):
 
     result = mycol.find({'cr': Batch_Name})
     list_cur = list(result)
-    print(dumps(list_cur))
+    print("list",dumps(list_cur))
 
 
 

@@ -75,6 +75,10 @@ def read_wpa_report(file_name, download):
         'b8' : 'WPR  Systems_C CPP Linux Programming Feb 22nd Batch1',
         'b9' : 'WRP Systems_C CPP Linux Programming Feb 22nd Batch2',
         'C1' : 'WPR CIS Feb 2022',
+        'L12': 'WPR_JR 12',
+        'L13': 'WPR_JAb-6',
+        'L14': 'WPR_SFDC2',
+        'L15': 'WPR_NC4',
     }
     scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
              "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]

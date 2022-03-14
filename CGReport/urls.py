@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import index, wpr_report, download_consolidated_report, wsr_report, download_wsr, download_attendance, download_wpr_report, validate_wsr, validate_wpr, validate_consolidated, validate_candidates
+from .views import index, wpr_report, download_consolidated_report, wsr_report, download_wsr, download_attendance, download_wpr_report, validate_wsr, validate_wpr, validate_consolidated, validate_candidates, wpr_stats_comm
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,5 +30,5 @@ urlpatterns = [
     path('validation_wpr/', validate_wpr),
     path('validate_consolidated/', validate_consolidated),
     path('validate_candidates/', validate_candidates),
-
+    path('wpr_stats/', wpr_stats_comm)
 ]
