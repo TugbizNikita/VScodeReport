@@ -48,4 +48,6 @@ def read_batch_attendance(file_name):
 
     return attendance_df
 
+
+
 read_batch_attendance('L1')
